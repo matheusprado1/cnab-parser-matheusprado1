@@ -69,7 +69,7 @@ def get_filter_cnab(name):
 
 def get_total_balance(name):
     total_balance = 0
-    filter = CNAB.objects.filter(name=name)
+    filter = get_filter_cnab(name)
     for item in filter:
         if item.type == 2 or item.type == 3 or item.type == 9:
             total_balance -= int(float(item.value))
