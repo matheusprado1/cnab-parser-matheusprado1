@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../../static/styles.css" rel="stylesheet">
+    <title>Cnab Parser</title>
+  </head>
+  <body>
+    <div class="container">
+            <h1>{{name}}</h1>
+            {% for item in cnab %}
+            <li>
+                <p>Type:  <strong>{{item.type}}</strong></p>
+                <p>Date (YYYMMDD):  <strong>{{item.date}}</strong></p>
+                <p>Value:  <strong>R${{item.value}}0</strong></p>
+                <p>CPF:  <strong>{{item.cpf}}</strong></p>
+                <p>Card:  <strong>{{item.card}}</strong></p>
+                <p>Hour:  <strong>{{item.hour}}</strong></p>
+                <p>Owner:  <strong>{{item.owner}}</strong></p>
+                <p>Name:  <strong>{{item.name}}</strong></p>
+            </li>
+            {% endfor %}
+        </ul>
+        <aside>Balance: R$ {{total_balance}},00</aside>
+    </div>
+  </body>
+</html>

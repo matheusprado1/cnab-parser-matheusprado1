@@ -1,0 +1,14 @@
+
+{% extends 'app/base.html' %} {% load crispy_forms_tags %} {% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %} {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Save File</button>
+    {% if url %}
+    <span>Send: <a href="{{url}}">{{ url }} </a></span>
+    {% endif %} {% if error %}
+    <span>Error</span>
+    {% endif %}
+    <br></br>
+    <p>Para verificar os dados, basta salvar o arquivo CNAB e digitar o nome da loja na <strong>url</strong>( exatamente como esta no arquivo EX: http://0.0.0.0:8000/operations/<strong>MERCADO DA AVENIDA</strong> ). </p>
+</form>
+{% endblock %}
